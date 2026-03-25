@@ -90,10 +90,9 @@ a:active {
 /* --- Principal >> Postagens principais --- */
 #posts-principais {
   padding-top: 1.5em;
-}
-
-#posts-principais h1 {
-  margin-bottom: 1em;
+  position: relative;
+  overflow: hidden;
+  
 }
 
 #posts-principais .post {
@@ -102,10 +101,38 @@ a:active {
   margin-left: 2.5%;
   margin-right: 2.5%;
   display: inline-block;
+  position: relative
+  
 }
+
+
+#posts-principais h1 {
+  margin-bottom: 1em;
+  
+}
+
+
 
 #posts-principais .post .titulo {
   text-shadow: 1px 1px black;
+}
+
+.sobreposto h2{
+  position: absolute; 
+  top: 6px;    
+  left: 6px;   
+  right: 6px; 
+  background-color: rgba(255, 255, 255, 0.3); 
+  text-align: left; 
+  box-sizing: border-box;
+  top: 20px;
+  transition: all 200ms ease;
+  opacity: 0;
+}
+
+.sobreposto h2:hover{
+  top: 6px;
+  opacity: 1;
 }
 
 #posts-principais .post img {
@@ -114,6 +141,7 @@ a:active {
   box-sizing: border-box;
   border: 6px solid white;
   margin-bottom: .5em;
+  display: block;
 }
 
 
@@ -151,6 +179,8 @@ a:active {
 
 /* --- Principal >> Nuvem de tags --- */
 #tags {
+  top:0;
+  position: sticky;
   float: right;
   width: 300px;
   padding: 15px;
@@ -161,7 +191,12 @@ a:active {
   box-shadow: -4px 0 10px rgba(0, 0, 0, 0.5);
   text-align: center;
   box-sizing: border-box;
+  display: inline-block; 
+  cursor: default;
+  z-index: 1000;
 }
+
+
 
 #tags h1 {
   margin-bottom: 1em;
@@ -178,7 +213,18 @@ a:active {
   background-color: orange;
   color: white;
   text-shadow: 1px 1px black;
+
 }
+
+.tag-1:active,
+.tag-2:active,
+.tag-3:active{
+  transform: translate(-2px, -2px);
+  
+}
+
+
+
 
 .tag-2 {
   font-size: 125%;
@@ -188,9 +234,59 @@ a:active {
   font-size: 150%;
 }
 
+.post.novidade p{
+  display: inline;
+  font-family: "Aldrich", sans-serif;
+  font-size: 90%;
+  color: orange;
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 3px;
+  display: inline-block;
+  margin-right: 1em;
+  animation: mudar-cor 1s infinite;
+}
 
+@keyframes mudar-cor {
+  0% { color: orange; }
+  50% { color: orangered; }
+  100% { color: orange; }
+ 
+}
 
+.novidade::selection {
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
 
+.fantasma{
+  width: 40px;
+  opacity: 1;
+  transition: all 1000ms ease;
+}
+
+.fantasma:hover{
+  opacity: 0;
+}
+
+#boo1{ 
+  position: fixed;
+  bottom: 10%;
+  right: 45%
+}
+
+#boo2{
+  position: fixed;
+  top: 20px;
+  right: 30%;
+}
+
+#boo3{
+  position: fixed;
+  top: 50%;
+  left: 20%;
+}
 
 /* --- Rodapé --- */
 #rodape {
