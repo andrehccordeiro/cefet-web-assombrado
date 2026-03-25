@@ -38,6 +38,7 @@ a:hover {
 
 a:active {
   color: red;
+  transform: translateY(1px);
 }
 
 
@@ -51,12 +52,24 @@ a:active {
 
 #cabecalho ul {
   background-color: rgba(0, 204, 147, 0.53);
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+#cabecalho li{
+  padding: 15px 20px;
 }
 
 #cabecalho a {
   text-decoration: none;
   text-shadow: 1px 1px black;
+  display: inline-block; 
+  padding: 15px 20px;
 }
+
+
+
 
 #menu-de-navegacao ul {
   margin-bottom: 0;
@@ -147,6 +160,7 @@ a:active {
   background-size: 300px;
   box-shadow: -4px 0 10px rgba(0, 0, 0, 0.5);
   text-align: center;
+  box-sizing: border-box;
 }
 
 #tags h1 {
